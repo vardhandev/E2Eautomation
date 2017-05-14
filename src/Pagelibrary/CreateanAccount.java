@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 public class CreateanAccount {
 	WebDriver wd;
 	
-	By selectgenderradio = By.xpath("//input[@id='id_gender1']");
+	By selectgenderradio = By.xpath(".//*[@id='account-creation_form']/div[1]/div[1]/div[1]/label");
 	By Firstname = By.xpath("customer_firstname");
 	By Lastname = By.xpath("customer_lastname");
 	By emailaddess= By.xpath(".//*[@id='email']");
@@ -40,7 +40,9 @@ public class CreateanAccount {
 	
 	
 	public void selectgender(){
+		
 		wd.findElement(selectgenderradio).click();
+		System.out.println("clickked on select gender");
 	}
 	public void enterfirstname(String firstname){
 		wd.findElement(Firstname).sendKeys(firstname);
@@ -105,6 +107,9 @@ public class CreateanAccount {
 	}
 	public void clickonregister(){
 		wd.findElement(register).click();
+	}
+	public void titledisplayed(){
+		wd.findElement(By.xpath(".//*[@id='account-creation_form']/div[1]/div[1]/label")).isDisplayed();
 	}
 	
 }

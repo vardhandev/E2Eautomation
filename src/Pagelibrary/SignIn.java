@@ -19,6 +19,7 @@ public class SignIn {
 	By alreadyregemail= By.xpath(".//*[@id='email']");
 	By aslreadypassword =  By.xpath(".//*[@id='passwd']");
 	By loginsign = By.xpath(".//*[@id='SubmitLogin']");
+	By Create_register_button = By.xpath(".//*[@id='SubmitCreate']");
 	
 	/* This method is to click on sign in link on top*/
 	
@@ -52,7 +53,8 @@ public class SignIn {
 	}
 	public void clickoncreateaccount(){
 		//log.info("click on create account");
-		wd.findElement(createmailadd).click();
+		wd.findElement(Create_register_button).click();
+		System.out.println("clickong regiter button");
 	}
 	
 	public String getpagetitle(){

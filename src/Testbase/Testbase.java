@@ -57,6 +57,7 @@ public class Testbase {
 	public WebDriver selectbrowser(String browser){
 		
 		if(browser.equals("firefox") || browser.equals("FIREFOX")){
+		System.setProperty("webdriver.gecko.driver", "F:\\seleniumlib\\");	
 		wd= new FirefoxDriver();
 		wd.manage().window().maximize();
 		return wd;
@@ -74,6 +75,10 @@ public class Testbase {
 		}
 		return null;
 		
+	}
+	
+	public void waitfor(int sec) throws InterruptedException{
+		Thread.sleep(sec*1000);
 	}
 	
 }
